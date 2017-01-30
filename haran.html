@@ -1,0 +1,152 @@
+<script type="text/javascript">
+$(document).ready(function () {
+    showhideFields();
+    $("#how_would_you_like_to_be_contacted").change(function () {
+        showhideFields();
+    });
+
+});
+
+  //this toggles the visibility of our company field based on our Income field value
+function showhideFields() {
+	//Medicina
+		if ($("#area").val() == "Medicina" ){
+	        jQuery("#especialidade option[value='Cirurgia']").show()
+	        jQuery("#especialidade option[value='Clínica Médica']").show()
+	        jQuery("#especialidade option[value='Endocrinologia e Metabologia']").show()
+	        jQuery("#especialidade option[value='Geriatria e Gerontologia']").show()
+	        jQuery("#especialidade option[value='Ginecologia e Obstetrícia']").show()
+	        jQuery("#especialidade option[value='Medicina de Família e Comunidade']").show()
+	        jQuery("#especialidade option[value='Urgência e Emergência']").show()
+	        jQuery("#especialidade option[value='Medicina Intensiva']").show()
+	        jQuery("#especialidade option[value='Neonatologia']").show()
+	        jQuery("#especialidade option[value='Otorrinolaringologia']").show()
+	        jQuery("#especialidade option[value='Psiquiatria']").show()
+	        jQuery("#especialidade option[value='Radiologia e Diagnóstico por Imagem']").show()
+	        jQuery("#especialidade option[value='Terapêutica Pediátrica']").show()
+	        jQuery("#especialidade option[value='Intensiva Pediátrica']").show()
+	        jQuery("#especialidade option[value='Traumatologia e Ortopedia']").show()
+		}
+	    else{
+	       	jQuery("#especialidade option[value='Cirurgia']").hide()
+	        jQuery("#especialidade option[value='Clínica Médica']").hide()
+	        jQuery("#especialidade option[value='Endocrinologia e Metabologia']").hide()
+	        jQuery("#especialidade option[value='Geriatria e Gerontologia']").hide()
+	        jQuery("#especialidade option[value='Ginecologia e Obstetrícia']").show()
+	        jQuery("#especialidade option[value='Medicina de Família e Comunidade']").hide()
+	        jQuery("#especialidade option[value='Urgência e Emergência']").hide()
+	        jQuery("#especialidade option[value='Medicina Intensiva']").hide()
+	        jQuery("#especialidade option[value='Neonatologia']").hide()
+	        jQuery("#especialidade option[value='Otorrinolaringologia']").hide()
+	        jQuery("#especialidade option[value='Psiquiatria']").hide()
+	        jQuery("#especialidade option[value='Radiologia e Diagnóstico por Imagem']").hide()
+	        jQuery("#especialidade option[value='Terapêutica Pediátrica']").hide()
+	        jQuery("#especialidade option[value='Intensiva Pediátrica']").hide()
+	        jQuery("#especialidade option[value='Traumatologia e Ortopedia']").hide()
+	    }
+	//Enfermagem
+	if ($("#area").val() == "Enfermagem" ){
+	        jQuery("#especialidade option[value='Atenção Primária e Saúde da Família']").show()
+	        jQuery("#especialidade option[value='Diagnósticos de Enfermagem']").show()
+	        jQuery("#especialidade option[value='Gestão de Enfermagem']").show()
+	        jQuery("#especialidade option[value='Saúde da Criança e do Adolescente']").show()
+	        jQuery("#especialidade option[value='Saúde do Adulto']").show()
+	        jQuery("#especialidade option[value='Saúde Materna e Neonatal']").show()
+	        jQuery("#especialidade option[value='Técnicos de Enfermagem']").show()
+	        jQuery("#especialidade option[value='Urgência e Emergência']").show()
+	        
+		}
+	    else{
+	        jQuery("#especialidade option[value='Atenção Primária e Saúde da Família']").hide()
+	        jQuery("#especialidade option[value='Diagnósticos de Enfermagem']").hide()
+	        jQuery("#especialidade option[value='Gestão de Enfermagem']").hide()
+	        jQuery("#especialidade option[value='Saúde da Criança e do Adolescente']").hide()
+	        jQuery("#especialidade option[value='Saúde do Adulto']").hide()
+	        jQuery("#especialidade option[value='Saúde Materna e Neonatal']").hide()
+	        jQuery("#especialidade option[value='Técnicos de Enfermagem']").hide()
+	        jQuery("#especialidade option[value='Urgência e Emergência']").hide()
+	        
+	    }
+	//Fisioterapia
+	if ($("#area").val() == "Fisioterapia" ){
+	        jQuery("#especialidade option[value='Cardiovascular e Respiratória']").show()
+	        jQuery("#especialidade option[value='Esportiva Traumato Ortopédica']").show()
+	        jQuery("#especialidade option[value='Neurofuncional']").show()
+	        jQuery("#especialidade option[value='Pediátrica Neonatal: Cardiorrespiratória e Terapia Intensiva']").show()
+	        jQuery("#especialidade option[value='Terapia Intensiva Adulto']").show()
+	        
+	        
+		}
+	    else{
+	        jQuery("#especialidade option[value='Cardiovascular e Respiratória']").hide()
+	        jQuery("#especialidade option[value='Esportiva Traumato Ortopédica']").hide()
+	        jQuery("#especialidade option[value='Neurofuncional']").hide()
+	        jQuery("#especialidade option[value='Pediátrica Neonatal: Cardiorrespiratória e Terapia Intensiva']").hide()
+	        jQuery("#especialidade option[value='Terapia Intensiva Adulto']").hide()
+	    }
+
+	//Psicolgia
+	if ($("#area").val() == "Psicolgia" ){
+	        jQuery("#especialidade option[value='Cognitivo Comportamental']").show()
+		}
+	    else{
+	        jQuery("#especialidade option[value='Cognitivo Comportamental']").hide()
+	    }
+	//Odontologia
+	if ($("#area").val() == "Odontologia" ){
+	        jQuery("#especialidade option[value='Implantologia e Periodontia']").show()
+	        jQuery("#especialidade option[value='Odonto Estética']").show()
+	        jQuery("#especialidade option[value='Prótese Odontológica Dentística']").show()
+		}
+	    else{
+	        jQuery("#especialidade option[value='Implantologia e Periodontia']").hide()
+	        jQuery("#especialidade option[value='Odonto Estética']").hide()
+	        jQuery("#especialidade option[value='Prótese Odontológica Dentística']").hide()
+	    }
+
+	//Nutrição
+	if ($("#area").val() == "Odontologia" ){
+	        jQuery("#especialidade option[value='Nutrição Clínica']").show()
+	        
+		}
+    else{
+        jQuery("#especialidade option[value='Nutrição Clínica']").hide()
+        
+    }
+
+	//Veterinária	
+	if ($("#area").val() == "Odontologia" ){
+	        jQuery("#especialidade option[value='Pequenos Animais']").show()
+	        
+		}
+    else{
+        jQuery("#especialidade option[value='Pequenos Animais']").hide()
+        
+    }
+	//Contabilidade
+
+	if ($("#area").val() == "Odontologia" ){
+	        jQuery("#especialidade option[value='Pequenos Animais']").show()  
+		}
+    else{
+        jQuery("#especialidade option[value='Pequenos Animais']").hide()
+    }
+
+	//Direito
+    if ($("#how_would_you_like_to_be_contacted").val() == "Phone" )
+        $("#time_day").show();
+    else
+        $("#time_day").hide();
+}
+</script>
+
+<script>
+	
+
+$("#especialidade option").each(function(){
+	if ($(this).text() == 'cirurgia') {console.log('haran lindo')}
+    //console.log($(this).text())
+})
+
+
+</script>
