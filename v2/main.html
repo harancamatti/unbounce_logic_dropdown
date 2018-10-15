@@ -1,0 +1,51 @@
+New code
+
+<script type="text/javascript">
+	  $(document).ready(function () {
+	  	// 1 - Verificar se existe um formulário
+	  	var s = window.location.host=="campanha.secad.com.br";
+	  	var e = $('form').length;
+	  	if ((s==true)&&(e>0)) {
+	  		//2 - Existe o campo profissão e especialidade
+	  		if (($('#profissoes').length!=1)||($('#especialidades').length!=1)) {
+	  			break;
+	  		}
+	  		//3 - Inserir todas as opções de profissão;
+	  		adicionaProfissoes();
+
+	  		// 4 - Verifica se existe o fake "escolha" na especidade, se não inserir apção fake "escolha..." na especilidade;
+	  		adicionaEspecialidades();
+	  	}
+
+      showhideFields();
+      $("#profissoes").change(function () {
+          showhideFields();
+      });
+
+  });
+	  function adicionaProfissoes(){
+	  	jQuery('profissoes option').remove();
+	  	jQuery('#profissoes').append(new Option("Selecione sua profissão...","","",true));
+  		jQuery('#profissoes').append(new Option("Médico(a)","Médico(a)"));
+  		jQuery('#profissoes').append(new Option("Enfermeiro(a)","Enfermeiro(a)"));
+  		jQuery('#profissoes').append(new Option("Fisioterapeuta","Fisioterapeuta"));
+  		jQuery('#profissoes').append(new Option("Psicólogo(a)","Psicólogo(a)"));
+  		jQuery('#profissoes').append(new Option("Nutricionista","Nutricionista"));
+  		jQuery('#profissoes').append(new Option("Veterinário(a)","Veterinário(a)"));
+  		jQuery('#profissoes').append(new Option("Técnico(a)","Técnico(a)"));
+  		jQuery('#profissoes').append(new Option("Educador(a) Físico(a)","Educador(a) Físico(a)"));
+  		jQuery('#profissoes').append(new Option("Farmacêutico(a)","Farmacêutico(a)"));
+  		jQuery('#profissoes').append(new Option("Outros(as)","Outros(as)"));
+	  }
+
+	  function adicionaEspecialidades(){
+	  	jQuery('#especialidades option').remove();
+	  	
+	  }
+	
+	
+	4 - Verifica se existe o fake "escolha" na especidade, se não inserir apção fake "escolha..." na especilidade;
+	5 - Aguarda escolha de profissão;
+	6 - Adiciona opções de especialidade de acordo com profissão
+	7 - Hide/show especialidades com mudança de profissão
+</script>
