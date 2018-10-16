@@ -19,6 +19,7 @@
 		   	  	"Educador(a) Físico(a)" : ["Educação Física"],
 		   	  	"Farmacêutico(a)": ["Farmácia"],
 		   	  	"Nutricionista" : ["Nutrição Clínica"],
+		   	  	"Outros(as)":[]
    			}
 	  		//3 - Inserir todas as opções de profissão;
 	  		adicionaProfissoes();
@@ -55,11 +56,13 @@
 	  	valProfissoes = jQuery('#profissoes').val();
    		jQuery.each(especialidadesFormData[valProfissoes],function(key,value){
    			jQuery('#especialidades').append(new Option(value,value));	
+   	  
    	  });
 
 	   //Outros(as)
-	   if (jQuery('#profissoes').val()!="") {
-	      jQuery('#especialidades').append(new Option("Outros(as)","Outros(as)"))
+	   if (jQuery('#profissoes').val()!=""||jQuery('#profissoes').val()=="Outros(as)") {
+	   	  console.log('entrou aqui')
+	      jQuery('#especialidades').append(new Option("Outros(as)","Outros(as)"));
 	   }
 
 	}
