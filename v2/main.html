@@ -1,5 +1,3 @@
-New code
-
 <script type="text/javascript">
 	  $(document).ready(function () {
 	  	// 1 - Verificar se existe um formulário
@@ -8,23 +6,35 @@ New code
 	  	if ((s==true)&&(e>0)) {
 	  		//2 - Existe o campo profissão e especialidade
 	  		if (($('#profissoes').length!=1)||($('#especialidades').length!=1)) {
-	  			break;
+	  			return false;
 	  		}
+	  		//2,5 - Criar array de especialidades;
+	  		especialidadesFormData = {
+		   	  	"Médico(a)":["Anestesia","Cardiologia","Cirurgia","Clínica Médica","Emergência Pediátrica","Endocrinologia e Metabologia","Geriatria e Gerontologia","Ginecologia e Obstetrícia","Intensiva Pediátrica","Medicina de Emergência","Medicina de Família e Comunidade","Medicina do Trabalho","Medicina Intensiva","Neonatologia","Oftalmologia","Oncologia","Otorrinolaringologia","Psiquiatria","Radiologia e Diagnóstico por Imagem","Terapêutica","Terapêutica Pediátrica","Traumatologia e Ortopedia","Urgência e Emergência"],
+		   	  	"Enfermeiro(a)": ["Atenção Primária a Saúde da Família","Diagnósticos de Enfermagem","Geriatria","Gestão de Enfermagem","Saúde da Criança e Adolescente","Saúde do Adulto","Saúde Materna e Neonatal","Terapia Intensiva","Urgência e Emergência"],
+		   	  	"Fisioterapeuta":["Cardiovascular e Respiratória","Esportiva e atividade física","Neurofuncional","Pediátrica e Neonatal: Cardiorrespiratória e Terapia Intensiva","Terapia Intensiva Adulto","Traumato Ortopédica"],
+		   	  	"Psicólogo(a)":["Psicologia Clínica","Terapias Cognitivas"],
+		   	  	"Técnico(a)":["Técnicos de Enfermagem","Técnicos de Radiologia"],
+		   	  	"Veterinário(a)":["Pequenos Animais"],
+		   	  	"Educador(a) Físico(a)" : ["Educação Física"],
+		   	  	"Farmacêutico(a)": ["Farmácia"],
+		   	  	"Nutricionista" : ["Nutrição Clínica"],
+   			}
 	  		//3 - Inserir todas as opções de profissão;
 	  		adicionaProfissoes();
 
 	  		// 4 - Verifica se existe o fake "escolha" na especidade, se não inserir apção fake "escolha..." na especilidade;
-	  		adicionaEspecialidades();
+	  		jQuery('#profissoes').change(function(){
+	  			jQuery('#especialidades option').remove()
+	  			adicionaEspecialidades();
+	  		})	  		
 	  	}
 
-      showhideFields();
-      $("#profissoes").change(function () {
-          showhideFields();
-      });
-
-  });
+  	});
+	 
 	  function adicionaProfissoes(){
-	  	jQuery('profissoes option').remove();
+	  	jQuery('#profissoes option').remove();
+	  	jQuery('#especialidades option').remove()
 	  	jQuery('#profissoes').append(new Option("Selecione sua profissão...","","",true));
   		jQuery('#profissoes').append(new Option("Médico(a)","Médico(a)"));
   		jQuery('#profissoes').append(new Option("Enfermeiro(a)","Enfermeiro(a)"));
@@ -36,16 +46,22 @@ New code
   		jQuery('#profissoes').append(new Option("Educador(a) Físico(a)","Educador(a) Físico(a)"));
   		jQuery('#profissoes').append(new Option("Farmacêutico(a)","Farmacêutico(a)"));
   		jQuery('#profissoes').append(new Option("Outros(as)","Outros(as)"));
+  		jQuery('#especialidades').append(new Option("Aguardando profissão...","","",true));
 	  }
 
-	  function adicionaEspecialidades(){
-	  	jQuery('#especialidades option').remove();
-	  	
-	  }
+	 function adicionaEspecialidades(){
+	  	jQuery('#especialidades').append(new Option("Selecione sua especialidade...","","","true"));
+
+	  	valProfissoes = jQuery('#profissoes').val();
+   		jQuery.each(especialidadesFormData[valProfissoes],function(key,value){
+   			jQuery('#especialidades').append(new Option(value,value));	
+   	  });
+
+	   //Outros(as)
+	   if (jQuery('#profissoes').val()!="") {
+	      jQuery('#especialidades').append(new Option("Outros(as)","Outros(as)"))
+	   }
+
+	}
 	
-	
-	4 - Verifica se existe o fake "escolha" na especidade, se não inserir apção fake "escolha..." na especilidade;
-	5 - Aguarda escolha de profissão;
-	6 - Adiciona opções de especialidade de acordo com profissão
-	7 - Hide/show especialidades com mudança de profissão
 </script>
